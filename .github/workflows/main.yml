@@ -28,6 +28,6 @@ jobs:
         username: ${{ secrets.SSH_USER }}
         port: ${{ secrets.SSH_PORT }}
         key: ${{ secrets.SSH_KEY }}
-        source: "dist"
-        target: "test"
+        source: "."
+        target: "/home/deploy/app/GoBarberApi"
     
