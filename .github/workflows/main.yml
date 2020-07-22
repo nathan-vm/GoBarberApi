@@ -20,14 +20,14 @@ jobs:
       # Executar build
     - name: Run build
       run: yarn build
-      # Copiar pasta dist para dentro da Digital Ocean
-    - name: copy dist to digital ocean
+      # Copiar pasta para dentro da Digital Ocean
+    - name: copy to digital ocean
       uses: appleboy/scp-action@master
       with:
         host: ${{ secrets.SSH_HOST }}
         username: ${{ secrets.SSH_USER }}
         port: ${{ secrets.SSH_PORT }}
         key: ${{ secrets.SSH_KEY }}
-        source: "."
+        source: ".,!node_modules"
         target: "/home/deploy/app/GoBarberApi"
     
